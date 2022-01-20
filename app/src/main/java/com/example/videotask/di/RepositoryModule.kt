@@ -19,8 +19,8 @@ object RepositoryModule {
     @Singleton
     @Provides
     fun provideVideoRepository(
-        addressService: VideoService,
+        videoService: VideoService,
     ): VideoRepository {
-        return VideoRepositoryImpl(addressService)
+        return VideoRepositoryImpl(videoService)
     }
 }
