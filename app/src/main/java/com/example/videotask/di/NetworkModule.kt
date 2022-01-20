@@ -1,5 +1,6 @@
 package com.example.videotask.di
 
+import com.example.videotask.network.services.VideoService
 import com.example.videotask.network.util.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -46,5 +47,13 @@ object NetworkModule {
             .build()
     }
 
+    /**
+     * Provide video service
+     */
+    @Singleton
+    @Provides
+    fun provideLoginService(retrofit: Retrofit): VideoService{
+        return retrofit.create(VideoService::class.java)
+    }
 
 }
